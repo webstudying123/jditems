@@ -1,0 +1,347 @@
+@import 'base.less';
+
+#header {
+    // background-color: red;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    .left {
+        width: 80px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            display: block;
+            width: 57px;
+            height: 22px;
+            background-image: url(../images/sprites.png);
+            background-size: 200px 200px;
+            background-position: 0 -110px;
+        }
+    }
+
+    .center {
+        flex: 1;
+        position: relative;
+
+        i {
+            position: absolute;
+            height: 22px;
+            width: 30px;
+            background-image: url(../images/sprites.png);
+            background-size: 200px 200px;
+            background-position: -55PX -110px;
+            top: 5px;
+            left: 5px;
+        }
+
+        input {
+            height: 30px;
+            border-radius: 15px;
+            width: 100%;
+            padding-left: 30px;
+        }
+
+    }
+
+    .right {
+        height: 40px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        a {
+            color: wheat;
+        }
+    }
+}
+
+#slider {
+
+    .swiper-container {
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+#nav {
+    display: flex;
+    flex-wrap: wrap;
+
+    .items {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        img {
+            width: 40px;
+            margin: 5px 0;
+        }
+
+        p {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+    }
+
+}
+
+#main {
+
+    .skill {
+        display: flex;
+        justify-content: space-between;
+        line-height: 30px;
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 20px;
+                height: 25px;
+                margin: 0 5px;
+            }
+
+            span {
+                font-size: 15px;
+                line-height: 15px;
+                color: red;
+                margin: 0 5px;
+            }
+
+            .time {
+                display: flex;
+
+                i:not(:nth-child(3n)) {
+                    background-color: black;
+                    color: white;
+                    margin-left: 5px;
+                }
+
+                i {
+                    font-style: normal;
+                    display: flex;
+                    width: 20px;
+                    height: 20px;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+
+        .more {
+
+            a {
+                color: #ccc;
+                font-size: 15px;
+            }
+        }
+    }
+
+    .products {
+        display: flex;
+
+
+        .box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            img {
+                width: 110px;
+                height: 110px;
+            }
+
+            p {
+                margin: 5px 0;
+                color: red;
+            }
+        }
+    }
+
+}
+
+#market {
+    .title {
+        line-height: 30px;
+        font-size: 15px;
+
+        h4::before {
+            content: '';
+            width: 4px;
+            height: 15px;
+            background-color: red;
+            display: inline-block;
+            margin: 0 10px;
+        }
+    }
+   
+    .content {
+        display: flex;
+
+        .left {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+                img {
+                   width: 100%;
+                }
+            }
+        }
+    }
+}
+#market1 {
+    .title {
+        line-height: 30px;
+        font-size: 15px;
+
+        h4::before {
+            content: '';
+            width: 4px;
+            height: 15px;
+            background-color: red;
+            display: inline-block;
+            margin: 0 10px;
+        }
+    }
+   
+    .content {
+        display: flex;
+
+        .left {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+                img {
+                   width: 100%;
+                }
+            }
+        }
+    }
+}
+#market2 {
+    margin-bottom: 60px;
+    .title {
+        line-height: 30px;
+        font-size: 15px;
+
+        h4::before {
+            content: '';
+            width: 4px;
+            height: 15px;
+            background-color: red;
+            display: inline-block;
+            margin: 0 10px;
+        }
+    }
+   
+    .content {
+        display: flex;
+
+        .left {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+
+        .right {
+            width: 50%;
+            a {
+                display: block;
+                width: 100%;
+                img {
+                   width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+#footer {
+    width: 100%;
+    display: flex;
+    background-color: #ccc;
+    padding: 8px 0;
+    position: fixed;
+    bottom: 0;
+
+    .foot {
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+
+        .box {
+            width: 30px;
+            height: 22px;
+            background-image: url(../images/sprites.png);
+            background-size: 200px 200px;
+            margin-bottom: 5px;
+        }
+
+        .box1 {
+            background-position: -30px -30px;
+        }
+
+        .box2 {
+            background-position: -60px -30px;
+        }
+
+        .box3 {
+            background-position: -90px -30px;
+        }
+
+        .box4 {
+            background-position: -120px -30px;
+        }
+    }
+}

@@ -1,0 +1,328 @@
+/* 定义一些公共的全局变量 */
+* {
+  margin: 0;
+  padding: 0;
+  /* 在移动端给所有元素设置box-sizing:border-box; 让盒模型计算方式固定为 设置的宽高 不会被padding或者border影响 */
+  box-sizing: border-box;
+  /* 在移动端去除一些按住高亮的背景色 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* 禁止页面文字选择 ，此属性不继承，一般加在body上规定整个body的文字都不会自动调整 */
+  -webkit-user-select: none;
+  /* 禁止文字自动调整大小(默认情况下旋转设备的时候文字大小会发生变化)，此属性也不继承，一般加在body上规定整个body的文字都不会自动调整  */
+  -webkit-text-size-adjust: 100%;
+}
+html {
+  font-size: 26.6667vw;
+}
+body {
+  font-size: .14rem;
+  font-family: '微软雅黑';
+}
+a {
+  text-decoration: none;
+  /* 直接在默认a样式设置为666 */
+  color: #666;
+}
+li {
+  list-style: none;
+}
+input {
+  /* input内外边框都去掉 */
+  border: 0;
+  outline: 0;
+}
+img {
+  /* 设置图标标签对齐方式 中线对齐 解决图片距离块级元素3px间距 */
+  vertical-align: middle;
+}
+input,
+button {
+  /* 消除输入框和按钮的原生外观，在iOS上加上这个属性才能给按钮和输入框自定义样式  */
+  -webkit-appearance: none;
+  /* 去掉IOS移除原生控件样式 */
+  -webkit-touch-callout: none;
+}
+.bt {
+  border-top: 0.01rem solid #ccc;
+}
+.br {
+  border-right: 0.01rem solid #ccc;
+}
+.bb {
+  border-bottom: 0.01rem solid #ccc;
+}
+.bl {
+  border-left: 0.01rem solid #ccc;
+}
+#header {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+#header .left {
+  width: 0.8rem;
+  height: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .left a {
+  display: block;
+  width: 0.57rem;
+  height: 0.22rem;
+  background-image: url(../images/sprites.png);
+  background-size: 2rem 2rem;
+  background-position: 0 -1.1rem;
+}
+#header .center {
+  flex: 1;
+  position: relative;
+}
+#header .center i {
+  position: absolute;
+  height: 0.22rem;
+  width: 0.3rem;
+  background-image: url(../images/sprites.png);
+  background-size: 2rem 2rem;
+  background-position: -55PX -1.1rem;
+  top: 0.05rem;
+  left: 0.05rem;
+}
+#header .center input {
+  height: 0.3rem;
+  border-radius: 0.15rem;
+  width: 100%;
+  padding-left: 0.3rem;
+}
+#header .right {
+  height: 0.4rem;
+  width: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#header .right a {
+  color: wheat;
+}
+#slider .swiper-container img {
+  width: 100%;
+}
+#nav {
+  display: flex;
+  flex-wrap: wrap;
+}
+#nav .items {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#nav .items img {
+  width: 0.4rem;
+  margin: 0.05rem 0;
+}
+#nav .items p {
+  font-size: 0.13rem;
+  margin-bottom: 0.05rem;
+}
+#main .skill {
+  display: flex;
+  justify-content: space-between;
+  line-height: 0.3rem;
+}
+#main .skill .left {
+  display: flex;
+  align-items: center;
+}
+#main .skill .left img {
+  width: 0.2rem;
+  height: 0.25rem;
+  margin: 0 0.05rem;
+}
+#main .skill .left span {
+  font-size: 0.15rem;
+  line-height: 0.15rem;
+  color: red;
+  margin: 0 0.05rem;
+}
+#main .skill .left .time {
+  display: flex;
+}
+#main .skill .left .time i:not(:nth-child(3n)) {
+  background-color: black;
+  color: white;
+  margin-left: 0.05rem;
+}
+#main .skill .left .time i {
+  font-style: normal;
+  display: flex;
+  width: 0.2rem;
+  height: 0.2rem;
+  justify-content: center;
+  align-items: center;
+}
+#main .skill .more a {
+  color: #ccc;
+  font-size: 0.15rem;
+}
+#main .products {
+  display: flex;
+}
+#main .products .box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#main .products .box img {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+#main .products .box p {
+  margin: 0.05rem 0;
+  color: red;
+}
+#market .title {
+  line-height: 0.3rem;
+  font-size: 0.15rem;
+}
+#market .title h4::before {
+  content: '';
+  width: 0.04rem;
+  height: 0.15rem;
+  background-color: red;
+  display: inline-block;
+  margin: 0 0.1rem;
+}
+#market .content {
+  display: flex;
+}
+#market .content .left {
+  width: 50%;
+}
+#market .content .left a {
+  display: block;
+  width: 100%;
+}
+#market .content .left a img {
+  width: 100%;
+}
+#market .content .right {
+  width: 50%;
+}
+#market .content .right a {
+  display: block;
+  width: 100%;
+}
+#market .content .right a img {
+  width: 100%;
+}
+#market1 .title {
+  line-height: 0.3rem;
+  font-size: 0.15rem;
+}
+#market1 .title h4::before {
+  content: '';
+  width: 0.04rem;
+  height: 0.15rem;
+  background-color: red;
+  display: inline-block;
+  margin: 0 0.1rem;
+}
+#market1 .content {
+  display: flex;
+}
+#market1 .content .left {
+  width: 50%;
+}
+#market1 .content .left a {
+  display: block;
+  width: 100%;
+}
+#market1 .content .left a img {
+  width: 100%;
+}
+#market1 .content .right {
+  width: 50%;
+}
+#market1 .content .right a {
+  display: block;
+  width: 100%;
+}
+#market1 .content .right a img {
+  width: 100%;
+}
+#market2 {
+  margin-bottom: 0.6rem;
+}
+#market2 .title {
+  line-height: 0.3rem;
+  font-size: 0.15rem;
+}
+#market2 .title h4::before {
+  content: '';
+  width: 0.04rem;
+  height: 0.15rem;
+  background-color: red;
+  display: inline-block;
+  margin: 0 0.1rem;
+}
+#market2 .content {
+  display: flex;
+}
+#market2 .content .left {
+  width: 50%;
+}
+#market2 .content .left a {
+  display: block;
+  width: 100%;
+}
+#market2 .content .left a img {
+  width: 100%;
+}
+#market2 .content .right {
+  width: 50%;
+}
+#market2 .content .right a {
+  display: block;
+  width: 100%;
+}
+#market2 .content .right a img {
+  width: 100%;
+}
+#footer {
+  width: 100%;
+  display: flex;
+  background-color: #ccc;
+  padding: 0.08rem 0;
+  position: fixed;
+  bottom: 0;
+}
+#footer .foot {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#footer .foot .box {
+  width: 0.3rem;
+  height: 0.22rem;
+  background-image: url(../images/sprites.png);
+  background-size: 2rem 2rem;
+  margin-bottom: 0.05rem;
+}
+#footer .foot .box1 {
+  background-position: -0.3rem -0.3rem;
+}
+#footer .foot .box2 {
+  background-position: -0.6rem -0.3rem;
+}
+#footer .foot .box3 {
+  background-position: -0.9rem -0.3rem;
+}
+#footer .foot .box4 {
+  background-position: -1.2rem -0.3rem;
+}
